@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DepthAI Demostratie (ROS-Melodic versie) &mdash; Avans: DepthAI Demostrator 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="prev" title="Welcome to Avans: DepthAI Demostrator (ROS-Melodic versie)" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: DepthAI Demostrator
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DepthAI Demostratie (ROS-Melodic versie)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#benodigdheden">Benodigdheden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#voorbereiding">Voorbereiding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installeren-en-bouwen-van-benodigde-packages">Installeren en bouwen van benodigde packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ros-environment-toepassen">ROS-Environment toepassen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#camera-verbinden-met-computer">Camera verbinden met computer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#voorbeelden">Voorbeelden</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#image-processing-applicatie-cirkel-detectie">Image processing applicatie: Cirkel detectie</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#positie-van-de-cirkels">Positie van de cirkels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#image-processing-source-code">Image-processing source-code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#machine-learning-applicate-object-classification-localization">Machine learning applicate: Object classification &amp; localization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#positie-van-de-objecten">Positie van de objecten</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nn-detector-source-code">nn Detector source-code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#eigen-neuraal-netwerk-gebruiken">Eigen Neuraal netwerk gebruiken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#luxonis-oak-camera-in-urdf-tf">Luxonis OAK-camera in URDF &amp; TF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nader-informatie">Nader Informatie</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: DepthAI Demostrator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DepthAI Demostratie (ROS-Melodic versie)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/DepthAI_Demonstratie.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="depthai-demostratie-ros-melodic-versie">
+<h1>DepthAI Demostratie (ROS-Melodic versie)<a class="headerlink" href="#depthai-demostratie-ros-melodic-versie" title="Link to this heading"></a></h1>
+<p>In dit document “DepthAI-Demostrator” worden voorbeeldprogramma’s gepresenteerd welke met behulp van een Luxonis OAD-D camera objecten kan detecteren:</p>
+<ul class="simple">
+<li><p>Lokalisatie van cirkels in de omgevingsruimte (XYZ)</p></li>
+<li><p>Detectie en lokalisatie van vooraf getrainde objecten in de omgevingsruimte (XYZ)</p></li>
+</ul>
+<p>n.b. de waardes van de locatie (XYZ) betreft het punt van het object dat zich het dichts bij de camera bevindt.</p>
+<section id="benodigdheden">
+<h2>Benodigdheden<a class="headerlink" href="#benodigdheden" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.luxonis.com/projects/hardware/en/latest/pages/BW1098OAK.html">Luxonis OAK-D camera</a></p></li>
+</ul>
+</section>
+<section id="voorbereiding">
+<h2>Voorbereiding<a class="headerlink" href="#voorbereiding" title="Link to this heading"></a></h2>
+<p>Voorafgaand aan deze setup dient het volgende geïnstalleerd te zijn:</p>
+<ul class="simple">
+<li><p>ROS Melodic + ROS base packages (deze zijn al geïnstalleerd op de Avans ROS image)</p></li>
+<li><p>Er wordt verondersteld dat er een al een workspace &lt;my_robot&gt;_ws is gecreëerd.</p></li>
+</ul>
+<p>Let op: Volg nauwkeurig de instructies in de volgorde hier gegeven. Een verkeerde volgorde of het overslaan van handeling kan ervoor zorgen dat de demonstratie programma’s niet werkt!</p>
+</section>
+<section id="installeren-en-bouwen-van-benodigde-packages">
+<h2>Installeren en bouwen van benodigde packages<a class="headerlink" href="#installeren-en-bouwen-van-benodigde-packages" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ros-melodic-ros-numpy
+sudo<span class="w"> </span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://raw.githubusercontent.com/luxonis/depthai-ros/main/install_dependencies.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/&lt;my_robot&gt;_ws/src
+
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AvansMechatronica/depth-ai-avans.git
+
+<span class="nb">cd</span><span class="w"> </span>..
+rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>-r<span class="w"> </span>-y
+catkin<span class="w"> </span>b<span class="w"> </span>-j1
+<span class="nb">source</span><span class="w"> </span>devel/setup.bash
+<span class="nb">cd</span><span class="w"> </span>src
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AvansMechatronica/my_depthai.git
+catkin<span class="w"> </span>b<span class="w"> </span>-j1
+</pre></div>
+</div>
+<p><em>Let op: bij de catkin opties je dient hieraan het argument -j1 toe te voegen om foutmeldingen te voorkomen</em></p>
+</section>
+<section id="ros-environment-toepassen">
+<h2>ROS-Environment toepassen<a class="headerlink" href="#ros-environment-toepassen" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w">  </span><span class="nv">$HOME</span>/&lt;my_robot&gt;_ws/devel/setup.bash
+</pre></div>
+</div>
+</section>
+<section id="camera-verbinden-met-computer">
+<h2>Camera verbinden met computer<a class="headerlink" href="#camera-verbinden-met-computer" title="Link to this heading"></a></h2>
+<p>Verbinden Luxonis OAK-D camera met de development computer(virtuele machine)</p>
+<ul class="simple">
+<li><p>Verbindt de Luxonis OAK-D camera met een USB-poort van de development computer</p></li>
+<li><p>Beweeg de muispointer over de icoontjes linksonder van de virtuele machine totdat je de Intel Movidius MyriadX connectie ziet en click op het betreffende icoontje</p></li>
+</ul>
+<p><img alt="Image" src="../_images/UsbConnect1.png" /></p>
+<ul class="simple">
+<li><p>Selecteer vervolgens Connect (Disconnect from Host)</p></li>
+</ul>
+<p><img alt="image" src="../_images/UsbConnect2.png" /></p>
+<p><img alt="image" src="../_images/UsbConnect3.png" /></p>
+<p><em>Zorg er voor de “Remember my choice and do not ask again” aangevinkt is.</em></p>
+<p>Bij het starten van nodes voor de Luxoinis OAK-D camera kan nogmaals bovenstaande procedure herhaald moeten worden (handel dan snel !!!).</p>
+<p>Hierna is de Luxoinis OAK-D camera verbonden met de virtuele machine, je kunt dezelfde handelingen ook doen voor andere type (industriële) USB-camera’s</p>
+</section>
+<section id="voorbeelden">
+<h2>Voorbeelden<a class="headerlink" href="#voorbeelden" title="Link to this heading"></a></h2>
+<p>Er worden hierna 2 voorbeelden(applicaties) gepresenteerd voor het gebruik van de Luxoinis OAK-D camera:</p>
+<p>•	Image processing applicatie: Cirkel detectie</p>
+<p>•	Machine learning applicate: Object classification &amp; localization</p>
+<section id="image-processing-applicatie-cirkel-detectie">
+<h3>Image processing applicatie: Cirkel detectie<a class="headerlink" href="#image-processing-applicatie-cirkel-detectie" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>my_depthai<span class="w"> </span>circle_detector.launch
+</pre></div>
+</div>
+<p>Door dit launch wordt de usb-camera node en de image-processing node gestart. Ook wordt RVIZ opgestart. Je zult nu twee beelden zien met het originele beeld en de het verwerkte beeld.
+<img alt="image" src="../_images/Cirkel1.png" />
+<img alt="image" src="../_images/Cirkel2.png" /></p>
+<section id="positie-van-de-cirkels">
+<h4>Positie van de cirkels<a class="headerlink" href="#positie-van-de-cirkels" title="Link to this heading"></a></h4>
+<p>De positie van de cirkels worden gepubliceerd in een ROS-topic “/image_processor/circle_center”. Je kunt deze opvragen met:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/image_processor/circle_center
+</pre></div>
+</div>
+</section>
+<section id="image-processing-source-code">
+<h4>Image-processing source-code<a class="headerlink" href="#image-processing-source-code" title="Link to this heading"></a></h4>
+<p>Het python programma dat de cirkels detecteert(omcirkels) kun je vinden:</p>
+<ul class="simple">
+<li><p><strong>$HOME/&lt;my_robot&gt;_ws/src/my_depthai/scripts/circle_detector.py</strong></p></li>
+</ul>
+<p>Werking:
+Doormiddel van een “HoughCircles” openCV functie worden cirkels in een image topic gedetecteerd en in een nieuw image topic gepubliceerd.</p>
+<ul class="simple">
+<li><p><em>Subscriber:  /stereo_inertial_nn_publisher/color/image (remap naar image_in)</em></p></li>
+<li><p><em>Publisher: /stereo_inertial_nn_publisher/color/circles (remap van image_out)</em></p></li>
+</ul>
+<p>Je kunt het python-script gebruiken als template voor je eigen image-processor.</p>
+</section>
+</section>
+<section id="machine-learning-applicate-object-classification-localization">
+<h3>Machine learning applicate: Object classification &amp; localization<a class="headerlink" href="#machine-learning-applicate-object-classification-localization" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch<span class="w"> </span>my_depthai<span class="w"> </span>nn_detector.launch
+</pre></div>
+</div>
+<p>Door dit launch wordt de usb-camera node en de nn_detector (neural network) node gestart. Ook wordt RVIZ opgestart. Je zult nu twee beelden zien met het originele beeld en de het verwerkte beeld.
+<img alt="image" src="../_images/Fruit1.jpg" />
+<img alt="image" src="../_images/Fruit2.jpg" />
+<img alt="image" src="../_images/Fruit3.jpg" /></p>
+<section id="positie-van-de-objecten">
+<h4>Positie van de objecten<a class="headerlink" href="#positie-van-de-objecten" title="Link to this heading"></a></h4>
+<p>De positie van de objecte  worden gepubliceerd in een ROS-topic <em>“/stereo_inertial_nn_publisher/color/detections”</em>. Je kunt deze opvragen met:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/stereo_inertial_nn_publisher/color/detections
+</pre></div>
+</div>
+</section>
+<section id="nn-detector-source-code">
+<h4>nn Detector source-code<a class="headerlink" href="#nn-detector-source-code" title="Link to this heading"></a></h4>
+<p>Het python programma dat de objecten van een boudingbox, titel en locatie voorziet kun je vinden:</p>
+<ul class="simple">
+<li><p><strong>$HOME/&lt;my_robot&gt;_ws/src/my_depthai/scripts/nn_detector_display.py</strong></p></li>
+</ul>
+<p>Werking:
+Doormiddel van een “rectangle” en putText openCV functies worden boudingboxes, labels en coördinaten in een SpatialDetectionArray topic gedetecteerd en aan een image topic toegevoegd. Hierdoor ontstaat een nieuw image dat als topic wordt gepubliceerd.</p>
+<ul class="simple">
+<li><p><em>Subscriber:  /stereo_inertial_nn_publisher/color/image (remap naar image_in)</em></p></li>
+<li><p><em>Subscriber: /stereo_inertial_nn_publisher/color/detections (remap naar detections)</em>
+Publisher: /stereo_inertial_nn_publisher/color/detections_image (remap van image_out)</p></li>
+</ul>
+<p>Je kunt het python-script gebruiken als template voor je eigen object detector.</p>
+</section>
+</section>
+</section>
+<section id="eigen-neuraal-netwerk-gebruiken">
+<h2>Eigen Neuraal netwerk gebruiken<a class="headerlink" href="#eigen-neuraal-netwerk-gebruiken" title="Link to this heading"></a></h2>
+<p>Een eigen getraind netwerk of netwerk van een AI-zoo kun je gebruiken door de een verwijzing te maken naar je eigen NN-Netwerk bestanden in het volgende bestand:</p>
+<ul class="simple">
+<li><p><strong>$HOME/&lt;my_robot&gt;_ws/src/my_depthai/launch/nn_detector.launch</strong></p></li>
+</ul>
+<p><em>Zie regels 59 t/m 65</em></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Network trainded by pyTorch --&gt;</span>
+<span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nnName&quot;</span><span class="w">                 </span><span class="na">default=</span><span class="s">&quot;SimpleFruitsv1iyolov5pytorch_openvino_2021.4_6shave.blob&quot;</span><span class="w"> </span><span class="na">if=</span><span class="s">&quot;$(eval arg(&#39;yoloPyTorch&#39;) == true)&quot;</span><span class="w">      </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nnConfig&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;SimpleFruitsv1iyolov5pytorch.json&quot;</span><span class="w"> </span><span class="na">if=</span><span class="s">&quot;$(eval arg(&#39;yoloPyTorch&#39;) == true)&quot;</span><span class="nt">/&gt;</span>
+
+<span class="cm">&lt;!-- network trainded by Roboflow --&gt;</span>
+<span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nnName&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;simplefruits_V1.blob&quot;</span><span class="w">  </span><span class="na">unless=</span><span class="s">&quot;$(eval arg(&#39;yoloPyTorch&#39;) == true)&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;nnConfig&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;simplefruits_V1.txt&quot;</span><span class="w">  </span><span class="na">unless=</span><span class="s">&quot;$(eval arg(&#39;yoloPyTorch&#39;) == true)&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>De NN-netwerk bestanden dien je in de volgende map te plaatsen:</p>
+<ul class="simple">
+<li><p><strong>$HOME/&lt;my_robot&gt;_ws/src/my_depthai/resources</strong></p></li>
+</ul>
+<p>Een NN-Netwerk (type pyTorch) kun je trainen met het volgende google-colab script:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/drive/1aT4W-coZ4yOy8CvZbr0pd4W_4gdZCWzC?usp=sharing">Google Colab tranings script</a></p></li>
+</ul>
+</section>
+<section id="luxonis-oak-camera-in-urdf-tf">
+<h2>Luxonis OAK-camera in URDF &amp; TF<a class="headerlink" href="#luxonis-oak-camera-in-urdf-tf" title="Link to this heading"></a></h2>
+<p>Je kunt de camera publiceren als grafisch object in RVIZ en binnen TF in je eigen robot omgeving.
+Doe dit door de juiste locatie van de camera in het volgend bestand aan te passen:</p>
+<ul class="simple">
+<li><p><strong>$HOME/&lt;my_robot&gt;_ws/src/my_depthai/launch/nn_detector.launch</strong></p></li>
+</ul>
+<p style="text-align:center;">of</p>
+<ul class="simple">
+<li><p><strong>$HOME/&lt;my_robot&gt;_ws/src/my_depthai/launch/circle_detector.launch</strong></p></li>
+</ul>
+<p><em>Zie regels 15 t/m 20</em></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cam_pos_x&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;0.25&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- Position respect to base frame (i.e. &quot;base_link) --&gt;</span>
+<span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cam_pos_y&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- Position respect to base frame (i.e. &quot;base_link) --&gt;</span>
+<span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cam_pos_z&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;0.5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- Position respect to base frame (i.e. &quot;base_link) --&gt;</span>
+<span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cam_roll&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- Orientation respect to base frame (i.e. &quot;base_link) --&gt;</span>
+<span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cam_pitch&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- Orientation respect to base frame (i.e. &quot;base_link) --&gt;</span>
+<span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;cam_yaw&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w"> </span><span class="cm">&lt;!-- Orientation respect to base frame (i.e. &quot;base_link) --&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="nader-informatie">
+<h2>Nader Informatie<a class="headerlink" href="#nader-informatie" title="Link to this heading"></a></h2>
+<p>Op de volgende websites kun je meer informatie vinden over Luxonis OAK-DepthAI camera:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.luxonis.com/hardware/products/OAK-D">OAK-D Camera</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to Avans: DepthAI Demostrator (ROS-Melodic versie)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
