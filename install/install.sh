@@ -7,7 +7,7 @@ sudo wget -qO- https://raw.githubusercontent.com/luxonis/depthai-ros/main/instal
 
 #git clone https://github.com/luxonis/depthai-ros.git ../../depthai-ros
 
-git clone https://github.com/GerardHarkemaAvans/my_depthai-ros.git ../../depthai-ros
+git clone https://github.com/AvansMechatronica/my_depthai-ros.git ../../depthai-ros
 
 cd ../../..
 
